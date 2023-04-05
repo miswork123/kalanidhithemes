@@ -1,0 +1,386 @@
+/*====== common style ======*/
+
+/* link gg font */
+
+/* link gg font */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+body {
+    font-weight: 400;
+    line-height: 1.4;
+    color: #000;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Forum', cursive;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: unset;
+    transition: 0.2s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul,
+li {
+    list-style-type: none;
+    margin: 0px;
+}
+
+img {
+    display: block;
+    width: 100%;
+    transition: .2s;
+}
+
+p,
+span,
+ul,
+li,
+a,
+div,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+textarea,
+select,
+button {
+    outline: none;
+}
+
+input {
+    line-height: normal;
+}
+
+label,
+button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+label:focus,
+button:focus {
+    outline: none;
+}
+
+
+.container {
+    /* custum */
+    max-width: 1780px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+
+:root{
+    --var-color: rgb(228,197,144);
+    --bg--: rgb(228,197,144);
+}
+.text-h1{
+    font-size: 80px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 80px;
+}
+
+.text-h5{
+    font-size: 21px;
+    color: rgb(255,255,255);
+}
+
+.text-span{
+    max-width: 350px;
+    color: rgb(167,167,167);
+}
+
+.auto-container {
+    position: static;
+    max-width: 1200px;
+    padding: 0px 15px;
+    margin: 0 auto;
+}
+
+/* start header */
+
+.main-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;   
+  z-index: 10000;
+}
+
+.main-headr__top{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.20);
+}
+
+.top-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.list-header{
+    display: flex;
+    align-items: center;
+    color: #fff;
+    line-height: 30px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.list-header li{
+    display: flex;
+    align-items: center;
+    transition: 0.2s ease-in;
+}
+
+.list-header li a{
+    display: flex;
+    align-items: center;
+}
+.list-header li svg{
+    padding-right: 5px;
+}
+
+.list-header li:nth-child(2){
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--var-color);
+    transform: rotate(45deg);
+    margin-left: 27px;
+    margin-right: 27px;
+}
+
+.list-header.two li:nth-child(1):hover{
+    color: var(--var-color);
+}
+.list-header.two li:nth-child(3):hover a{
+    color: var(--var-color);
+}
+
+.main-header-botom{
+    width: 100%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.header-botom{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hamburger{
+    width: 35px;
+    height: 29px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+.header-logo{
+    margin-left: 100px;
+}
+
+.hamburger span{
+    width: 30px;
+    height: 2px;
+    background: #fff;   
+}
+
+.link-butom{
+position: relative;
+display: block;
+}
+
+.btn-style-one{
+    padding: 17px 45px;
+    border: 2px solid var(--var-color);
+    background: var(--bg--);
+    text-transform: uppercase;
+    color: #000;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-size: 12px;
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    transition: 0.3s all ease;
+    float: left;
+    z-index: 1;
+    position: relative;
+      
+}
+
+.btn-style-one::before{
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -200%;
+    background: #000;
+    border-radius: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-30%);
+    -webkit-transition-duration: 800ms;
+    transition-duration: 800ms;
+}
+
+
+.btn-style-one:hover::before{
+    top: -25%;
+   
+}
+
+.bnt-warp{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}   
+
+.btn-style-one .text-two{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    white-space: nowrap;
+    display: block;
+    transition: 0.3s all ease;
+    color: #fff;
+    opacity: 0;
+    width: 100%;
+}
+
+  .btn-style-one:hover .text-two{
+    top: 0;
+    opacity: 1;
+    z-index: 1000;
+}
+
+.benber-section{
+    width: 100%;
+    height: 100%;
+}
+.benner-imtem{
+    width: 100%;
+}
+
+
+
+.benner-img{
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.conten-cemter{
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 950px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+.subtitle{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--var-color);
+    margin-bottom: 20px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-family: 'DM Sans', sans-serif;
+}
+.pattern-image{
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+.text-p{
+    width: 100%;
+    font-size: 20px;
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    margin-bottom: 30px;
+}
+
+.btn-style-one.next{
+    background: transparent;
+    color: var(--var-color);
+}
+
+.btn-style-one.next::before{
+    background: var(--bg--);
+
+}
+
+.btn-style-one.next .text-two{
+    color: #000;
+}
+.swiper-button-next::after, 
+.swiper-button-prev::after{
+   font-size: 15px;
+   color: var(--var-color);
+   transform: rotate(-45deg);
+}
+
+.swiper-button-next, 
+.swiper-button-prev{
+    border: 2px solid var(--var-color);
+    width: 42px;
+    transform: rotate(45deg);
+    top: 100%;
+    transition: 0.2s;
+}
+.swiper-button-next:hover:after{
+    color: #000;
+}
+.swiper-button-prev:hover:after{
+    color: #000;
+}
+.swiper-button-next:hover{
+    background: var(--bg--);
+  
+}
+.swiper-button-prev:hover{
+    background: var(--bg--);
+}
+
+.swiper-button-next{
+   right: 30px;
+}
+
+.swiper-button-prev{
+    left: 30px;
+}
