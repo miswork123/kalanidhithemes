@@ -336,7 +336,7 @@ display: block;
 .benber-section{
     width: 100%;
     height: 100%;
-  
+    position: relative;
    
 }
 .benner-imtem{
@@ -529,7 +529,7 @@ display: block;
     border: 2px solid var(--var-color);
     width: 42px;
     transform: rotate(45deg);
-    top: 70%;
+    top: 50%;
     transition: 0.2s;
 }
 
@@ -576,3 +576,83 @@ display: block;
     transition: all 7000ms linear 0ms;
 }
 
+.book-btn{
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    width: 110px;
+    height: 110px;
+    z-index: 10;
+}
+
+.book-btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--var-color);
+    transform: rotate(45deg);
+    
+}
+
+.benber-section .book-btn::before{
+    animation-name: rotateme;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rotateme;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes rotateme{
+    from{
+        transform: rotate(45deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+
+@-webkit-keyframes rotateme{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(-45deg);
+    }
+}
+.book-btn a{
+    position: relative;
+    display: block;
+    padding: 12px 10px;
+    background: var(--bg--);
+    width: 110px;
+    height: 110px;
+}
+
+.book-btn a span img{
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.book-btn a span:nth-child(2){
+    position: relative;
+    display: block;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.5em;
+    color: #202020;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'DM Sans', sans-serif;
+}
