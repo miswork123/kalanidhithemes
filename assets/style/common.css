@@ -147,6 +147,177 @@ button:focus {
     margin: 0 auto;
 }
 
+/* longding */
+
+.loader-wrap {
+    width: 100%;
+    height: 100%;
+    background: var(--bg--);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin: 0 auto;
+    min-height: 600px;
+    z-index: 100000;
+
+    animation: loading 4s ease-out forwards;
+}
+
+.loader-wrap.hidden {
+    display: none;
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+
+    }
+
+    30% {
+        opacity: 1;
+
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 1;
+
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+
+    }
+
+    80% {
+        opacity: 0.6;
+
+    }
+
+    90% {
+        opacity: 0.4;
+
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+
+    }
+
+
+}
+
+
+.div-close {
+    font-size: 20px;
+    color: #202020;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    border: 1px solid var(--var-color);
+    text-align: center;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 1000000000;
+}
+
+.animation-preloader {
+    align-items: center;
+    -webkit-align-items: center;
+    display: flex;
+    display: -ms-flexbox;
+    height: 100%;
+    justify-content: center;
+    -webkit-justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9999999;
+    flex-direction: column;
+}
+
+.spinner {
+    border: 3px solid #ffffff;
+    border-top-color: rgba(17, 17, 17, 1);
+    animation: spinner 1s infinite linear;
+    border-radius: 50%;
+    height: 150px;
+    margin: 0 auto 45px auto;
+    width: 150px;
+}
+
+.txt-loading {
+    text-align: center;
+    user-select: none;
+}
+
+.letters-loading {
+    font-weight: 500;
+    letter-spacing: 15px;
+    display: inline-block;
+    position: relative;
+    font-size: 70px;
+    line-height: 70px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(17, 17, 17, 0.5);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.letters-loading::before {
+    animation: letters-loading 4s infinite;
+    content: attr(data-text-preloader);
+    left: 0;
+    opacity: 0;
+    top: 0;
+    position: absolute;
+    color: #000;
+}
+
+
+@keyframes spinner {
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes letters-loading {
+
+    0%,
+    75%,
+    100% {
+        opacity: 0;
+        transform: rotateY(-90deg);
+    }
+
+    25%,
+    50% {
+        opacity: 1;
+        transform: rotateY(0deg);
+    }
+}
+
 /* start header */
 
 .main-header {
@@ -1263,13 +1434,23 @@ button:focus {
 }
 
 @-webkit-keyframes ripple {
-    70% {box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);}
-    100% {box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);}
+    70% {
+        box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+    }
 }
 
 @keyframes ripple {
-    70% {box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);}
-    100% {box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);}
+    70% {
+        box-shadow: 0 0 0 70px rgba(253, 167, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(253, 167, 0, 0);
+    }
 }
 
 .block-img {
@@ -2932,6 +3113,11 @@ input::-webkit-calendar-picker-indicator {
         padding-left: 0;
         padding-right: 15px;
     }
+
+    .main-header-botom.is-sticky {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
 }
 
 /* section bar-menu */
@@ -3658,6 +3844,19 @@ input::-webkit-calendar-picker-indicator {
     .events-img-center {
         width: 100%;
     }
+
+    /* .main-header-botom{
+        padding: 0;
+    
+    } */
+
+    .main-header.is-sticky {
+        top: 0;
+    }
+
+    .main-header-botom {
+        margin-top: 0;
+    }
 }
 
 
@@ -4374,22 +4573,25 @@ input::-webkit-calendar-picker-indicator {
 
 /* reponsive */
 
-@media only screen and (max-width: 991px){
-    .a-table__flex{
+@media only screen and (max-width: 991px) {
+    .a-table__flex {
         flex-direction: column;
         row-gap: 30px;
         align-items: stretch;
     }
-    .about-block.table{
+
+    .about-block.table {
         width: 100%;
     }
-    .about-blockp-line{
+
+    .about-blockp-line {
         width: unset;
     }
-    .map-img-table{
+
+    .map-img-table {
         padding-right: 0;
         height: 100%;
-     
+
     }
 
     .map-img-table iframe {
@@ -4397,29 +4599,71 @@ input::-webkit-calendar-picker-indicator {
         height: 100%;
         min-height: 600px;
     }
-    .map-table-left{
-        display: none;
-    }
-    .map-table-bg{
+
+    .map-table-left {
         display: none;
     }
 
-    .New-York{
+    .map-table-bg {
+        display: none;
+    }
+
+    .New-York {
         flex-wrap: wrap;
     }
-    .New-York-one{
+
+    .New-York-one {
         width: calc(100% / 2);
         padding: 0;
         margin-bottom: 30px;
     }
-    .text-a-table{
+
+    .text-a-table {
         padding: 0;
     }
 }
 
-@media only screen and (max-width: 768px){
-    .New-York{
+@media only screen and (max-width: 768px) {
+    .New-York {
         flex-direction: column;
     }
 }
 
+.scrollToTopBtn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    color: var(--color-two);
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid var(--var-color);
+    z-index: 100;
+    cursor: pointer;
+    background: var(--bg--);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    -webkit-transition: all 300ms ease;
+    -moz-transition: all 300ms ease;
+    -ms-transition: all 300ms ease;
+    -o-transition: all 300ms ease;
+    transition: all 300ms ease;
+    margin: 0 auto;
+    display: none;
+    z-index: 10000000000;
+}
+
+.scrollToTopBtn svg {
+    margin-top: 12px;
+
+}
+
+.scrollToTopBtn:hover {
+    background: #fff;
+}
+
+.scrollToTopBtn:hover svg {
+    fill: var(--var-color) !important;
+}

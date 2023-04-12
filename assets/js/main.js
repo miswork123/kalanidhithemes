@@ -14,6 +14,21 @@ window.addEventListener("scroll", () => {
 	}
 });
 
+// Hide Header on on scroll down
+
+// close loading
+
+let closeLoader = document.querySelector('.div-close');
+let loaderWrap = document.querySelector('.loader-wrap');
+
+closeLoader.addEventListener('click', function(){
+	loaderWrap.classList.add('hidden');
+});
+
+// end close loading
+
+
+// menu-out
 
 let menuIteam = document.querySelector(".hamburger");
 let menuMobile = document.querySelector(".hidden-bar");
@@ -62,5 +77,30 @@ for (let i = 0; i < titleQuestion.length; i++) {
 	});
 }
 
+document.addEventListener("scroll", handleScroll);
+// get a reference to our predefined button
+var scrollToTopBtn = document.querySelector(".scrollToTopBtn");
 
+function handleScroll() {
+  var scrollableHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var GOLDEN_RATIO = 0.05;
+
+  if ((document.documentElement.scrollTop / scrollableHeight ) > GOLDEN_RATIO) {
+    //show button
+    scrollToTopBtn.style.display = "block";
+  } else {
+    //hide button
+    scrollToTopBtn.style.display = "none";
+  }
+}
+
+scrollToTopBtn.addEventListener("click", scrollToTop);
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+  
 
